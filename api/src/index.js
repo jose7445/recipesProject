@@ -111,7 +111,9 @@ app
       }
     }
     res.send(response);
-  })
+  });
+app
+  .route("/recipe/:id")
   .post(function (req, res) {
     if (
       !req.body.id ||
@@ -174,7 +176,7 @@ app
     }
     res.send(response);
   });
-app.use(function (req, res, next) {
+app.use(function (req, res) {
   response = {
     error: true,
     codigo: 404,

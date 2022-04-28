@@ -52,12 +52,12 @@ export default defineComponent({
     },
   },
   methods: {
-    async deleteRecipe(recipeId) {
+    async deleteRecipe() {
       await axios
-        .delete("http://localhost:3000/recipe/" + recipeId)
+        .delete("http://localhost:3000/recipe/" + this.recipe.id)
         .then((response) => {
           console.log(response);
-          this.$emit("delete-recipe", recipeId);
+          this.$emit("delete-recipe", this.recipe.id);
         });
     },
   },
